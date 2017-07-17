@@ -61,6 +61,7 @@ exit /b 0
 :parent 
 set group=%2
 set artifact=%1
+echo "starting something"
 start /b /wait cmd.exe /c "mvn archetype:generate -DgroupId=%group% -DartifactId=%artifact% -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false"
 exit /b 0
 
@@ -68,7 +69,7 @@ exit /b 0
 
 set group=%groupId%
 set /p artifact=Module_Name:%=%
-::echo %artifact% %group%
+echo %artifact% %group%
 set webapp=%1
 if "%webapp%"=="webapp" start /b /wait cmd.exe /c "mvn archetype:generate -DgroupId=%group% -DartifactId=%artifact% -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
 
